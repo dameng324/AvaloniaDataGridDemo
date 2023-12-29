@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:AvaloniaDataGrid"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaDataGrid.MainWindow"
+        Title="AvaloniaDataGrid">
+   <Grid>
+		<DataGrid Name="Grid" AutoGenerateColumns="False" x:DataType="controls:TestModel">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Int32" x:DataType="controls:TestModel" Binding="{Binding Int32Field}" />
+				<DataGridTextColumn Header="Decimal" x:DataType="controls:TestModel" Binding="{Binding DecimalField}" />
+				<DataGridTextColumn Header="Enum" x:DataType="controls:TestModel" Binding="{Binding EnumField}" />
+				
+				<DataGridTextColumn Header="Double" x:DataType="controls:TestModel" Binding="{Binding DoubleField}" />
+				<DataGridTextColumn Header="String" x:DataType="controls:TestModel" Binding="{Binding StringField}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</Window>

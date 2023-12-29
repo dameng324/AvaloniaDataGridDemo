@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaDataGrid/App.axaml" value="AvaloniaDataGrid/AvaloniaDataGrid.csproj" />
+        <entry key="AvaloniaDataGrid/MainWindow.axaml" value="AvaloniaDataGrid/AvaloniaDataGrid.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

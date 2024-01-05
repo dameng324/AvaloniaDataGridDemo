@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
@@ -18,18 +19,19 @@ public partial class MainWindow : Window
         {
             Persons.Add(new TestModel(i));
         }
-
-        Grid.ItemsSource = Persons;
+        
+        DataContext = this;
 
         this.Title += $" - DynamicCodeSupport:{RuntimeFeature.IsDynamicCodeSupported}";
     }
 
-    [DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof(TestModel))]
-    public readonly ObservableCollection<TestModel> Persons = new();
+    public ObservableCollection<TestModel> Persons { get; } = new();
 }
 
 public class TestModel
 {
+    [DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof(Comparer<>))]
+    [DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof(decimal))]
     public TestModel(decimal price)
     {
         Int32Field = price;
